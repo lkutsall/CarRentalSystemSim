@@ -16,21 +16,14 @@ namespace Business.Concrete
         }
         public void Add(Brand brand)
         {
-            if (brand.BrandName.Length <= 2)
-            {
-                Console.WriteLine("Brand name muct be longer then two letters.");
-            }
-            else
-            {
-                _brandDal.Add(brand);
-                Console.WriteLine("Brand added to database.");
-            }
+            _brandDal.Add(brand);
+            Console.WriteLine("Brand added to database.");
         }
 
         public void Delete(Brand brand)
         {
-            Console.WriteLine("Brand deleted from database.");
             _brandDal.Delete(brand);
+            Console.WriteLine("Brand deleted from database.");
         }
 
         public List<Brand> GetAll()
@@ -40,7 +33,7 @@ namespace Business.Concrete
 
         public List<Brand> GetBrandByCarId(int id)
         {
-            return _brandDal.GetAll(b=>b.Id == id);
+            return _brandDal.GetAll(b => b.Id == id);
         }
 
         public void Update(Brand brand)

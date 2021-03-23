@@ -15,12 +15,12 @@ namespace DataAccess.Concrete
         public InMemoryDal()
         {
             _cars = new List<Car> {
-                new Car{Id = 1, BrandId=1, ColorId = 3, ModelYear = new DateTime(2020), Description="Coupe, automatic gear, leadless fuel", DailyPrice = 200},
-                new Car{Id = 2, BrandId=2, ColorId = 4, ModelYear = new DateTime(2019), Description="Roadster, manual gear, leadless fuel", DailyPrice = 450},
-                new Car{Id = 3, BrandId=3, ColorId = 4, ModelYear = new DateTime(2021), Description="SUV, 4x4, manual gear, diesel", DailyPrice = 600},
-                new Car{Id = 4, BrandId=3, ColorId = 3, ModelYear = new DateTime(2019), Description="Monster Truck, 4x4, manual gear, diesel", DailyPrice = 1200},
-                new Car{Id = 5, BrandId=2, ColorId = 2, ModelYear = new DateTime(2020), Description="Safari Jeep, 4x4, manual gear, leadless fuel", DailyPrice = 1000},
-                new Car{Id = 6, BrandId=1, ColorId = 1, ModelYear = new DateTime(2021), Description="Minibus, automatic gear, diesel", DailyPrice = 2000}
+                new Car{Id = 1, BrandId=1, ColorId = 3, ModelYear = "2020", Description="Coupe, automatic gear, leadless fuel", DailyPrice = 200},
+                new Car{Id = 2, BrandId=2, ColorId = 4, ModelYear = "2020", Description="Roadster, manual gear, leadless fuel", DailyPrice = 450},
+                new Car{Id = 3, BrandId=3, ColorId = 4, ModelYear = "2020", Description="SUV, 4x4, manual gear, diesel", DailyPrice = 600},
+                new Car{Id = 4, BrandId=3, ColorId = 3, ModelYear = "2020", Description="Monster Truck, 4x4, manual gear, diesel", DailyPrice = 1200},
+                new Car{Id = 5, BrandId=2, ColorId = 2, ModelYear = "2020", Description="Safari Jeep, 4x4, manual gear, leadless fuel", DailyPrice = 1000},
+                new Car{Id = 6, BrandId=1, ColorId = 1, ModelYear = "2020", Description="Minibus, automatic gear, diesel", DailyPrice = 2000}
             };
         }
 

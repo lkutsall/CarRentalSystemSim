@@ -10,12 +10,10 @@ namespace Business.Concrete
     public class CarManager : ICarService
     {
         ICarDal _carDal;
-        IBrandDal _brandDal;
 
-        public CarManager(ICarDal carDal, IBrandDal brandDal)
+        public CarManager(ICarDal carDal)
         {
             _carDal = carDal;
-            _brandDal = brandDal;
         }
 
         public void Add(Car car)
@@ -24,9 +22,9 @@ namespace Business.Concrete
             {
                 Console.WriteLine("The daily price should be greater then 0.");
             }
-            else if (_brandDal.Get(b => b.Id == car.Id).BrandName.Length <= 2)
+            else if (car.Name.Length <= 2)
             {
-                Console.WriteLine("Brand name should be longer then two letters.");
+                Console.WriteLine("The car name should be longer then two letters.");
             }
             else
             {
@@ -38,12 +36,17 @@ namespace Business.Concrete
         public void Delete(Car car)
         {
             _carDal.Delete(car);
-            Console.WriteLine("Brand deleted from database.");
+            Console.WriteLine("Car deleted from database.");
         }
 
         public List<Car> GetAll()
         {
             return _carDal.GetAll();
+        }
+
+        public Car GetById(int id)
+        {
+            return _carDal.Get(c => c.Id == id);
         }
 
         public List<Car> GetCarsByBrandId(int id)
@@ -59,7 +62,7 @@ namespace Business.Concrete
         public void Update(Car car)
         {
             _carDal.Update(car);
-            Console.WriteLine("Brand updated.");
+            Console.WriteLine("Car updated.");
         }
     }
 }
