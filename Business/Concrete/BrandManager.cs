@@ -17,7 +17,6 @@ namespace Business.Concrete
         public void Add(Brand brand)
         {
             _brandDal.Add(brand);
-            Console.WriteLine("Brand added to database.");
         }
 
         public void Delete(Brand brand)
@@ -28,12 +27,17 @@ namespace Business.Concrete
 
         public List<Brand> GetAll()
         {
-            throw new NotImplementedException();
+            return _brandDal.GetAll();
         }
 
         public List<Brand> GetBrandByCarId(int id)
         {
             return _brandDal.GetAll(b => b.Id == id);
+        }
+
+        public Brand GetById(int id)
+        {
+            return _brandDal.Get(b => b.Id == id);
         }
 
         public void Update(Brand brand)
