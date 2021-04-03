@@ -27,7 +27,7 @@ namespace ConsoleUI
 
             Console.WriteLine("GET ALL COLORS");
 
-            foreach (var color in colorManager.GetAll())
+            foreach (var color in colorManager.GetAll().Data)
             {
                 Console.WriteLine(color.ColorName);
             }
@@ -45,14 +45,14 @@ namespace ConsoleUI
 
             Console.WriteLine("GET ALL BRANDS");
 
-            foreach (var brand in brandManager.GetAll())
+            foreach (var brand in brandManager.GetAll().Data)
             {
                 Console.WriteLine(brand.BrandName);
             }
 
             Console.WriteLine("GET BRAND BY ID \n");
 
-            Console.WriteLine(brandManager.GetById(3).BrandName);
+            Console.WriteLine(brandManager.GetById(3).Data);
 
             //Console.WriteLine("UPDATE BRAND");
 
@@ -81,21 +81,21 @@ namespace ConsoleUI
 
             Console.WriteLine("CAR DETAILS \n");
 
-            foreach (var car in carManager.GetCarDetails())
+            foreach (var car in carManager.GetCarDetails().Data)
             {
                 Console.WriteLine("Brand = {0} ,Model = {1}, Color = {2}, Daily Price = {3}", car.BrandName, car.CarName, car.Color, car.DailyPrice);
             }
 
             Console.WriteLine("GET BY ID \n");
 
-            foreach (var car in carManager.GetCarsByBrandId(3))
+            foreach (var car in carManager.GetCarsByBrandId(3).Data)
             {
                 Console.WriteLine("{0} {1} {2} {3}", car.Id, car.ModelYear, car.DailyPrice, car.Description);
             }
 
             Console.WriteLine("GET BY COLOR ID \n");
 
-            foreach (var car in carManager.GetCarsByColorId(2))
+            foreach (var car in carManager.GetCarsByColorId(2).Data)
             {
                 Console.WriteLine("{0} {1} {2} {3}", car.Id, car.ModelYear, car.DailyPrice, car.Description);
             }
