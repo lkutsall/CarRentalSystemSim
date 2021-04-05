@@ -15,7 +15,7 @@ namespace Business.Concrete
 
         public RentalManager(IRentalDal rentalDal)
         {
-            rentalDal = _rentalDal;
+            _rentalDal = rentalDal;
         }
         public IResult Add(Rental rental)
         {
@@ -32,27 +32,29 @@ namespace Business.Concrete
 
         public IResult Delete(Rental rental)
         {
-            throw new NotImplementedException();
+            _rentalDal.Delete(rental);
+            return new SuccessResult(Messages.DeleteSuccessMessage);
         }
 
         public IDataResult<List<Rental>> GetAll()
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll());
         }
 
         public IDataResult<Rental> GetByCarId(int carId)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<Rental>(_rentalDal.Get(r => r.CarId == carId));
         }
 
         public IDataResult<Rental> GetByCustomerId(int customerId)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<Rental>(_rentalDal.Get(r => r.CustomerId == customerId));
         }
 
         public IResult Update(Rental rental)
         {
-            throw new NotImplementedException();
+            _rentalDal.Update(rental);
+            return new SuccessResult(Messages.UpdateSuccessMessage);
         }
     }
 }
