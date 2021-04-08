@@ -17,5 +17,6 @@ namespace Business.Constants
         public static string DeleteFailedMessage = "Deletion failed.";
         public static string RentationSuccessMessage = "Successfully rented. Have a safe ride.";
         public static string RentationFailedMessage = "Rentation failed.";
+        public static string EmailErrorMessage = "E-mail should contain @.";
     }
 }
