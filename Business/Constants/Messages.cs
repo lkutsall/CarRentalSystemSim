@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Entities.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -18,5 +19,12 @@ namespace Business.Constants
         public static string RentationSuccessMessage = "Successfully rented. Have a safe ride.";
         public static string RentationFailedMessage = "Rentation failed.";
         public static string EmailErrorMessage = "E-mail should contain @.";
+        public static string CarImageCountExceeded = "Car image count exceeded.";
+        public static string UserNotFoundMessage = "User not found.";
+        public static string PasswordErrorMessage = "Password is incorrect.";
+        public static string SuccessfulLoginMessage = "Login is successful.";
+        public static string UserExistMessage = "User already exists.";
+        public static string RegisterSuccessfulMessage = "User registered successfully.";
+        public static string AccessTokenCreatedMessage = "Access token successfully created.";
     }
 }

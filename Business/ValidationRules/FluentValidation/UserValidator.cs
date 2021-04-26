@@ -1,4 +1,5 @@
 ﻿using Business.Constants;
+using Core.Entities.Concrete;
 using Entities.Concrete;
 using FluentValidation;
 using System;
@@ -17,8 +18,6 @@ namespace Business.ValidationRules.FluentValidation
             RuleFor(u => u.LastName).MinimumLength(2);
             RuleFor(u => u.Email).NotNull();
             RuleFor(u => u.Email).Must(EmailRegex).WithMessage(Messages.EmailErrorMessage);
-            RuleFor(u => u.Password).NotNull();
-            RuleFor(u => u.Password).MinimumLength(8);
         }
 
         private bool EmailRegex(string arg)
